@@ -1,0 +1,38 @@
+<div class="card">
+    <div class="card-body text-center">
+        <img 
+        width="100"
+        height="100"
+        class="rounded-circle img-thumbnil border-danger"
+        [src]="user.picture?.large"
+        alt="">
+
+        <div class="card-title text-primary">
+            <h1>
+                <spam class="px-2">{{user.name?.title}}</spam>
+                <spam class="px-2">{{user.name?.first}}</spam>
+                <spam class="px-2">{{user.name?.last}}</spam>
+            </h1>
+        </div>
+        <div class="card-text">
+            <fa-icon [icon]="faEnvelope"></fa-icon>
+            {{ user.email }}
+        </div>
+
+        <div class="card-text">
+            <fa-icon [icon]="faMapMarkedAlt"></fa-icon>
+            {{ user.location?.city }} {{ user.location?.state }}
+            <p>{{ user.location?.street?.number }}</p>
+        </div>
+
+        <div class="card-text">
+            <fa-icon [icon]="faPhone"> </fa-icon>
+            {{user.phone}}
+        </div>
+
+        <div class="card-text">
+            <fa-icon [icon]="faBirthdayCake"></fa-icon>
+            {{ user.dob?.date | date }}
+        </div>
+    </div>
+</div>
