@@ -12,18 +12,17 @@ export class AppComponent implements OnInit{
   user: any;
   constructor(
     private userService: CardServiceService,
-    // private toastr: ToastrService
+    private toastr: ToastrService
   ){}
 
   ngOnInit(){
     this.userService.getUser().subscribe(
       (user:any) => {
         this.user = user.results[0];
-        console.log("no error");
       },
       (err) => {
-        // this.toastr.error(err.status,"Oops");
-        console.log("Error");
+        this.toastr.error(err.status,"Oops");
+        console.log("error");
       }
     )
   }
